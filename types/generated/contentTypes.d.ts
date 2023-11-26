@@ -740,32 +740,31 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
-export interface ApiHeaderHeader extends Schema.SingleType {
-  collectionName: 'headers';
+export interface ApiHeroSectionHeroSection extends Schema.SingleType {
+  collectionName: 'hero_sections';
   info: {
-    singularName: 'header';
-    pluralName: 'headers';
-    displayName: 'Header';
-    description: '';
+    singularName: 'hero-section';
+    pluralName: 'hero-sections';
+    displayName: 'Hero Section';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    photo_profile: Attribute.Media & Attribute.Required;
-    introduction: Attribute.String & Attribute.Required;
-    short_description: Attribute.Text & Attribute.Required;
+    title: Attribute.String;
+    subtitle: Attribute.Text;
+    profile_picture: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::header.header',
+      'api::hero-section.hero-section',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::header.header',
+      'api::hero-section.hero-section',
       'oneToOne',
       'admin::user'
     > &
@@ -868,7 +867,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about.about': ApiAboutAbout;
       'api::contact.contact': ApiContactContact;
-      'api::header.header': ApiHeaderHeader;
+      'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::project.project': ApiProjectProject;
       'api::project-category.project-category': ApiProjectCategoryProjectCategory;
     }
