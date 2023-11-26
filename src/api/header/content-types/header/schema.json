@@ -21,10 +21,12 @@
       ]
     },
     "introduction": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "subtitle": {
-      "type": "text"
+    "short_description": {
+      "type": "text",
+      "required": true
     }
   }
 }

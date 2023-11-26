@@ -13,14 +13,16 @@
   "pluginOptions": {},
   "attributes": {
     "explanation": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "cv_file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

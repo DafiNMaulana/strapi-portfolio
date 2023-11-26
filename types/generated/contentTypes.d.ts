@@ -689,8 +689,8 @@ export interface ApiAboutAbout extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    explanation: Attribute.Text;
-    cv_file: Attribute.Media;
+    explanation: Attribute.Text & Attribute.Required;
+    cv_file: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -753,8 +753,8 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
   attributes: {
     photo_profile: Attribute.Media & Attribute.Required;
-    introduction: Attribute.String;
-    subtitle: Attribute.Text;
+    introduction: Attribute.String & Attribute.Required;
+    short_description: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
