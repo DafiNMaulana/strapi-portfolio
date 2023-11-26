@@ -759,7 +759,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     thumbnail: Attribute.Media;
     project_categories: Attribute.Relation<
       'api::project.project',
-      'oneToMany',
+      'manyToMany',
       'api::project-category.project-category'
     >;
     createdAt: Attribute.DateTime;
@@ -794,9 +794,9 @@ export interface ApiProjectCategoryProjectCategory
   };
   attributes: {
     title: Attribute.String;
-    project: Attribute.Relation<
+    projects: Attribute.Relation<
       'api::project-category.project-category',
-      'manyToOne',
+      'manyToMany',
       'api::project.project'
     >;
     createdAt: Attribute.DateTime;
