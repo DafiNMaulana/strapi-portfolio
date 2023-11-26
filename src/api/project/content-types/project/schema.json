@@ -35,11 +35,11 @@
         "audios"
       ]
     },
-    "project_category": {
+    "project_categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::project-category.project-category",
-      "inversedBy": "projects"
+      "mappedBy": "project"
     }
   }
 }

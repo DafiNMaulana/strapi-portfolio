@@ -15,11 +15,11 @@
     "title": {
       "type": "string"
     },
-    "projects": {
+    "project": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::project.project",
-      "mappedBy": "project_category"
+      "inversedBy": "project_categories"
     }
   }
 }

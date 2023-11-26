@@ -757,9 +757,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
     production_url: Attribute.String;
     opensource_url: Attribute.String;
     thumbnail: Attribute.Media;
-    project_category: Attribute.Relation<
+    project_categories: Attribute.Relation<
       'api::project.project',
-      'manyToOne',
+      'oneToMany',
       'api::project-category.project-category'
     >;
     createdAt: Attribute.DateTime;
@@ -794,9 +794,9 @@ export interface ApiProjectCategoryProjectCategory
   };
   attributes: {
     title: Attribute.String;
-    projects: Attribute.Relation<
+    project: Attribute.Relation<
       'api::project-category.project-category',
-      'oneToMany',
+      'manyToOne',
       'api::project.project'
     >;
     createdAt: Attribute.DateTime;
